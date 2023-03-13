@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div>
-      <p>3D portfolio</p>
+      <p> my first 3D portfolio</p>
     </div>
   );
 };
