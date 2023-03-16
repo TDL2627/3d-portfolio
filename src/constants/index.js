@@ -35,6 +35,18 @@ import {
       title: "Work",
     },
     {
+      id: "feedbacks",
+      title: "Feedbacks",
+    },
+    {
+      id: "tech",
+      title: "Tech",
+    },
+    {
+      id: "exp",
+      title: "Experience",
+    },
+    {
       id: "contact",
       title: "Contact",
     },
