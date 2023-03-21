@@ -19,6 +19,7 @@ const Hero = () => {
               <span className="text-[#1d4ed8]">Full Stack Web Developer</span>{" "}
             </h1>
             <p>I make websites and games</p>
+            <p>I can do anything</p>
           </div>
         </div>
       </section>
