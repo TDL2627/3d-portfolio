@@ -28,9 +28,9 @@ const Hero = () => {
             <p>I make websites and games</p>
             <p>I can do anything</p>
             </div>
-           
           </div>
         </div>
+        <ComputersCanvas/>
       </section>
     </>
   );
