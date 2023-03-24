@@ -16,6 +16,7 @@ const useAutoRotate = () => {
   return ref;
 };
 
+
 const Computers = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -35,7 +36,13 @@ const Computers = () => {
 
   const computer = useGLTF("./desktop_pc/scene.gltf");
   const autoRotateRef = useAutoRotate();
+  const { scene, error } = useGLTF("./desktop_pc/scene.gltf");
 
+  useEffect(() => {
+    if (error) {
+      console.error("aye ", error);
+    }
+  }, [error]);
   return (
     <mesh ref={autoRotateRef}>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -52,12 +59,13 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
       <Canvas
         frameloop="always"
         shadows
         camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
+        onError={(error) => console.error("aye", error)}
+
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
@@ -69,7 +77,6 @@ const ComputersCanvas = () => {
         </Suspense>
         <Preload all />
       </Canvas>
-    </div>
   );
 };
 
