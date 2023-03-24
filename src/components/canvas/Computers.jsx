@@ -4,19 +4,6 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const useAutoRotate = () => {
-  const ref = useRef();
-
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.rotation.y = clock.getElapsedTime() * 0.25;
-    }
-  });
-
-  return ref;
-};
-
-
 const Computers = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -35,21 +22,22 @@ const Computers = () => {
   }, []);
 
   const computer = useGLTF("./desktop_pc/scene.gltf");
-  const autoRotateRef = useAutoRotate();
-  const { scene, error } = useGLTF("./desktop_pc/scene.gltf");
-
-  useEffect(() => {
-    if (error) {
-      console.error("aye ", error);
-    }
-  }, [error]);
+  const { scene, nodes, materials } = useGLTF('./desktop_pc/scene.gltf', (progressEvent) => {
+    const progress = (progressEvent.loaded / progressEvent.total) * 100;
+    console.log(`aye Model loading progress: ${progress}%`);
+  }, (errorEvent) => {
+    console.error(' aye An error occurred while loading the model:', errorEvent);
+  }, (loadedEvent) => {
+    console.log('aye Model has been successfully loaded:', loadedEvent);
+  });
+  
   return (
-    <mesh ref={autoRotateRef}>
+    <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={!isMobile ? 0.75 : 0.40}
+        scale={!isMobile ? 0.75 : 0.4}
         position={!isMobile ? [0, -2.25, -1.5] : [0, -0.25, -0.7]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -59,24 +47,23 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-      <Canvas
-        frameloop="always"
-        shadows
-        camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{ preserveDrawingBuffer: true }}
-        onError={(error) => console.error("aye", error)}
-
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-          <Computers />
-        </Suspense>
-        <Preload all />
-      </Canvas>
+    <Canvas
+      frameloop="always"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+      onError={(error) => console.error("aye", error)}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Computers />
+      </Suspense>
+      <Preload all />
+    </Canvas>
   );
 };
 
