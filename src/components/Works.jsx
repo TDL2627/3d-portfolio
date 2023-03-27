@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Works = () => {
   return (
-    <div>Works Wiser</div>
-  )
-}
+    <div id="exp" className="bg-red-500 h-screen w-full">
+      <h2>Works Wiser</h2>
+    </div>
+  );
+};
 
-export default Works
+export default Works;
