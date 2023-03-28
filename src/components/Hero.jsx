@@ -1,22 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../style";
-import { ComputersCanvas } from "./canvas";
 import { useState, useEffect } from "react";
+import { ComputersCanvas } from "./canvas";
+
 const Hero = () => {
   const [show3d, setShow3d] = useState(false);
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShow3d(true);
     }, 2000);
-  
+
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, []); 
+
   return (
     <>
-      <section className="relative w-full h-screen mx-auto mt-20 ">
+      <section className="relative w-full h-max mx-auto mt-20 bg-blue-400 ">
         <div
           className={` ${styles.paddingX} absolute inset-0 top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
         >
@@ -37,15 +39,19 @@ const Hero = () => {
             </p>{" "}
             <div className="mt-10">
               <p>I make websites and games</p>
-              <p>I can do anything</p>
+              <p>I can do anything.</p>
             </div>
           </div>
         </div>
-        {show3d && (
-        // <ComputersCanvas />
-<></>
-        )}
+
+
+    
       </section>
+
+<div className="h-[500px] w-full bg-red-500"> 
+<ComputersCanvas />
+
+</div>
     </>
   );
 };

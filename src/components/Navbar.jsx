@@ -7,6 +7,12 @@ import { logo, menu, close } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const scrollToElement = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  };
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 top-0 z-20 bg-blue-700  fixed   `}
@@ -33,14 +39,14 @@ const Navbar = () => {
                 active === link.title ? "text-white underline font-bold" : "text-secondary"
               } font-medium cursor-pointer  hover:text-white hover:underline`}
             >
-              <Link
+              <button
                 onClick={() => {
                   setActive(link.title);
+                  scrollToElement(link.id)
                 }}
-                to={`#${link.id}`}
               >
                 {link.title}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
