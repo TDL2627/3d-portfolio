@@ -30,8 +30,8 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title ? "text-white underline" : "text-secondary"
-              } font-medium cursor-pointer`}
+                active === link.title ? "text-white underline font-bold" : "text-secondary"
+              } font-medium cursor-pointer  hover:text-white hover:underline`}
             >
               <Link
                 onClick={() => {

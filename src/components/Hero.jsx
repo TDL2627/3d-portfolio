@@ -42,8 +42,8 @@ const Hero = () => {
           </div>
         </div>
         {show3d && (
-        <ComputersCanvas />
-
+        // <ComputersCanvas />
+<></>
         )}
       </section>
     </>
