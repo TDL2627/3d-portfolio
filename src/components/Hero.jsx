@@ -2,7 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
+import { useState, useEffect } from "react";
 const Hero = () => {
+  const [show3d, setShow3d] = useState(false);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShow3d(true);
+    }, 2000);
+  
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
   return (
     <>
       <section className="relative w-full h-screen mx-auto mt-20 ">
@@ -19,18 +30,21 @@ const Hero = () => {
               <span className="text-[#1d4ed8] ">Full Stack Web Developer</span>{" "}
             </h1>
             <h2 className={` text-2xl font-black md:hidden block`}>
-              Hi, I'm a{" "}
-              <span className="text-[#1d4ed8] ">Full Stack</span>{" "}
-
+              Hi, I'm a <span className="text-[#1d4ed8] ">Full Stack</span>{" "}
             </h2>
-            <p className="text-[#1d4ed8] md:hidden block font-black w-full  text-2xl ">Web Developer</p>{" "}
+            <p className="text-[#1d4ed8] md:hidden block font-black w-full  text-2xl ">
+              Web Developer
+            </p>{" "}
             <div className="mt-10">
-            <p>I make websites and games</p>
-            <p>I can do anything</p>
+              <p>I make websites and games</p>
+              <p>I can do anything</p>
             </div>
           </div>
         </div>
-        <ComputersCanvas/>
+        {show3d && (
+        <ComputersCanvas />
+
+        )}
       </section>
     </>
   );
