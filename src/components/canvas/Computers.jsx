@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
+import CustomCursor from "../CustomCusor";
 import CanvasLoader from "../Loader";
 
 const Computers = () => {
@@ -38,13 +38,31 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [pointer, setPointer] = useState(false);
+
+  const handleMouseMove = (event) => {
+    setPosition({ x: event.clientX, y: event.clientY });
+  };
+
   return (
+    <>
+      {pointer && <CustomCursor points={position} />}
+
     <Canvas
       frameloop="always"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       onError={(error) => console.error("aye", error)}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => {
+        setPointer(true);
+      }}
+      onMouseLeave={() => {
+        setPointer(false);
+      }}
+      style={{ cursor: "none" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -56,6 +74,7 @@ const ComputersCanvas = () => {
       </Suspense>
       <Preload all />
     </Canvas>
+    </>
   );
 };
 

@@ -14,11 +14,11 @@ const Hero = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []); 
+  }, []);
 
   return (
     <>
-      <section className="relative w-full h-max mx-auto mt-20 bg-blue-400 ">
+      <section className="relative w-full h-screen mx-auto mt-20 bg-blue-400 ">
         <div
           className={` ${styles.paddingX} absolute inset-0 top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
         >
@@ -44,14 +44,8 @@ const Hero = () => {
           </div>
         </div>
 
-
-    
+        <ComputersCanvas />
       </section>
-
-<div className="h-[500px] w-full bg-red-500"> 
-<ComputersCanvas />
-
-</div>
     </>
   );
 };

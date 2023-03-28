@@ -8,7 +8,7 @@ const CustomCursor = (props) => {
         style={{ left: points.x, top: points.y }}
     >
       <div className="custom-cursor-inner  ">
-        <p className="text-black">Drag </p>
+        <p className="text-black">Turn Me </p>
       </div>
     </div>
   );
