@@ -22,15 +22,7 @@ const Computers = () => {
   }, []);
 
   const computer = useGLTF("./desktop_pc/scene.gltf");
-  const { scene, nodes, materials } = useGLTF('./desktop_pc/scene.gltf', (progressEvent) => {
-    const progress = (progressEvent.loaded / progressEvent.total) * 100;
-    console.log(`aye Model loading progress: ${progress}%`);
-  }, (errorEvent) => {
-    console.error(' aye An error occurred while loading the model:', errorEvent);
-  }, (loadedEvent) => {
-    console.log('aye Model has been successfully loaded:', loadedEvent);
-  });
-  
+
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
