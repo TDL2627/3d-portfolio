@@ -30,7 +30,7 @@ const ThreeDpc = () => {
   };
   const [isMobile, setIsMobile] = useState(false);
   return (
-    <>
+    <div className="w-full h-[500px] bg-white">
       {pointer && <CustomCursor points={position} />}
 
       <Canvas
@@ -67,7 +67,7 @@ const ThreeDpc = () => {
         </Suspense>
         <Preload all />
       </Canvas>
-    </>
+    </div>
   );
 };
 
