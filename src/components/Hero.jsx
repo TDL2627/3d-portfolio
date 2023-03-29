@@ -2,23 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../style";
 import { useState, useEffect } from "react";
-import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
-  const [show3d, setShow3d] = useState(false);
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShow3d(true);
-    }, 2000);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   return (
     <>
-      <section className="relative w-full h-screen mx-auto mt-20 bg-blue-400 ">
+      <section className="relative w-full h-screen mx-auto mt-20 bg-black ">
         <div
           className={` ${styles.paddingX} absolute inset-0 top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
         >
@@ -43,8 +33,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        <ComputersCanvas />
       </section>
     </>
   );

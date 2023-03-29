@@ -10,6 +10,7 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import ThreeDpc from "./components/canvas/Computers";
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,14 +18,15 @@ const App = () => {
         <div className="bg-black">
           <Navbar />
           <Hero />
-          <About/>
-          <Experience/>
-          <Tech/>
-          <Works/>
-          <Feedbacks/>
+          <ThreeDpc />
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
           <div className="relative z-0">
-           <Contact/>
-           <StarsCanvas/>
+            <Contact />
+            <StarsCanvas />
           </div>
         </div>
       </div>
