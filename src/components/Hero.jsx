@@ -30,6 +30,7 @@ const Hero = () => {
             <div className="mt-10">
               <p>I make websites and games</p>
               <p>I can do anything.</p>
+              <p>You want it i got it</p>
             </div>
           </div>
         </div>
