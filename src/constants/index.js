@@ -154,7 +154,7 @@ import {
       ],
     },
     {
-      title: "Web Developer",
+      title: "Programmer",
       company_name: "Shopify",
       icon: shopify,
       iconBg: "#383E56",
