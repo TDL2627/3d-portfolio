@@ -32,7 +32,7 @@ const ThreeDpc = () => {
   // rotation
   return (
     <div className="basis-1/2 w-full md:h-full bg-slate-800 pr-10">
-      {pointer && <CustomCursor points={position} />}
+      {pointer && <CustomCursor points={position} text="Turn me" />}
 
       <Canvas
         frameloop="always"

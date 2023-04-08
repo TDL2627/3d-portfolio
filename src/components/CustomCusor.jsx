@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const CustomCursor = (props) => {
-  const { points } = props;
+  const { points, text } = props;
   return (
     <div
       className="custom-cursor "
         style={{ left: points.x, top: points.y }}
     >
       <div className="custom-cursor-inner  ">
-        <p className="text-black">Turn Me </p>
+        <p className="text-white">{text} </p>
       </div>
     </div>
   );
