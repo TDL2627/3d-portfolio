@@ -3,11 +3,11 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
+  Testimonials,
   Hero,
   Navbar,
-  Tech,
-  Works,
+  Skills,
+  Projects,
   StarsCanvas,
 } from "./components";
 import { meDesktop } from "./assets";
@@ -23,19 +23,24 @@ const App = () => {
             <Hero />
             <div className="w-full flex flex-row row-span-2">
               <div className="w-full basis-1/2 pt-20 relative">
-                <img className="absolute bottom-0 left-0 -ml-5 " src={meDesktop} alt="me" />
+                <img
+                  className="absolute bottom-0 left-0 -ml-5 "
+                  src={meDesktop}
+                  alt="me"
+                />
               </div>
               <ThreeDpc />
             </div>
           </div>
           <About />
+          <Skills />
+          <Projects />
           <Experience />
-          <Tech />
-          <Works />
-          <Feedbacks />
+
+          <Testimonials />
           <div className="relative z-0">
             <Contact />
-            <StarsCanvas />
+            {/* <StarsCanvas /> */}
           </div>
         </div>
       </div>
