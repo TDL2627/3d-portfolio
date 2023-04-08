@@ -4,11 +4,9 @@ import { styles } from "../style";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-
-
   return (
     <>
-      <section className="relative w-full h-[200px] mx-auto mt-20 bg-black ">
+      <section className="relative w-full h-full row-span-2 mx-auto mt-16 bg-slate-800 ">
         <div
           className={` ${styles.paddingX} absolute inset-0 top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
         >
@@ -28,9 +26,11 @@ const Hero = () => {
               Web Developer
             </p>{" "}
             <div className="mt-10">
-              <p>I make websites and games</p>
-              <p>I can do anything.</p>
-              <p>You want it i got it</p>
+              <p>
+                Experienced full stack developer skilled in building innovative
+                and high-performance web applications using a wide range of web
+                technologies.
+              </p>
             </div>
           </div>
         </div>

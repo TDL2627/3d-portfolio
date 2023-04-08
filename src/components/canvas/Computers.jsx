@@ -29,8 +29,9 @@ const ThreeDpc = () => {
     setPosition({ x: event.clientX, y: event.clientY });
   };
   const [isMobile, setIsMobile] = useState(false);
+  // rotation
   return (
-    <div className="w-full h-[500px] bg-white">
+    <div className="basis-1/2 w-full md:h-full bg-slate-800 pr-10">
       {pointer && <CustomCursor points={position} />}
 
       <Canvas
@@ -46,7 +47,7 @@ const ThreeDpc = () => {
         onMouseLeave={() => {
           setPointer(false);
         }}
-        style={{ cursor: "none" }}
+        style={{ cursor: "none"}}
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
