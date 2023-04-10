@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CustomCursor from "../CustomCusor";
-import CanvasLoader from "../Loader";
+import Loader from "../Loader";
 
 const ThreeDpc = () => {
   const checkScreenWidth = () => {
@@ -49,7 +49,7 @@ const ThreeDpc = () => {
         }}
         style={{ cursor: "none"}}
       >
-        <Suspense fallback={<CanvasLoader />}>
+        <Suspense fallback={<Loader />}>
           <OrbitControls
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}

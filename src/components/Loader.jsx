@@ -1,10 +1,13 @@
 import React from "react";
-
+import { Html, useProgress } from "@react-three/drei";
 const Loader = () => {
+  const {progress}= useProgress()
   return (
-    <div className="">
-      <p>Loader</p>
-    </div>
+   <Html>
+    <span className="canvas-loader">
+      <p className="">{progress.toFixed(2)}%</p>
+    </span>
+   </Html>
   );
 };
 

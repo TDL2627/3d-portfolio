@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Projects from './Projects';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
+import ScrollDown from './ScrollDown';
 
 export {
   Hero,
@@ -20,5 +21,6 @@ export {
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 
-  StarsCanvas
+  StarsCanvas,
+  ScrollDown,
 }

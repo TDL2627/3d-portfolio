@@ -9,6 +9,7 @@ import {
   Skills,
   Projects,
   StarsCanvas,
+  ScrollDown
 } from "./components";
 import { meDesktop } from "./assets";
 
@@ -19,7 +20,7 @@ const App = () => {
       <div className="bg-slate-800 relative z-0">
         <div className="bg-slate-800">
           <Navbar />
-          <div className="grid h-screen grid-rows-4  ">
+          <div className="grid h-screen grid-rows-4 relative  ">
             <Hero />
             <div className="w-full flex flex-row row-span-2">
               <div className="w-full basis-1/2 pt-20 relative">
@@ -31,6 +32,8 @@ const App = () => {
               </div>
               <ThreeDpc />
             </div>
+            {/* scroll down button */}
+           <ScrollDown/>
           </div>
           <About />
           <Skills />
