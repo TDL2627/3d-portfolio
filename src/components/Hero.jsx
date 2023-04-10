@@ -24,13 +24,13 @@ const Hero = () => {
             <p className="text-[#1d4ed8] md:hidden block font-black w-full  text-2xl ">
               Web Developer
             </p>{" "}
-            {/* <div className="mt-10">
+            <div className="mt-10">
               <p>
                 Experienced full stack developer skilled in building innovative
                 and high-performance web applications using a wide range of web
                 technologies.
               </p>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
