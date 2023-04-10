@@ -6,7 +6,8 @@ const Hero = () => {
     <>
       <section className="relative w-full h-full row-span-2 mx-auto mt-16 bg-slate-800 ">
         <div
-          className={` ${styles.paddingX} absolute inset-0 md:top-[100px] top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+         data-aos="fade-down"
+          className={` ${styles.paddingX}  absolute inset-0 md:top-[100px] top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
         >
           <div className="flex flex-col justify-center items-center mt-5 ">
             <div className="w-5 h-5 rounded-full bg-[#1d4ed8]" />

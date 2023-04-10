@@ -10,7 +10,7 @@ const ScollDown = () => {
         }
       };
   return (
-    <div className="absolute  bottom-10  left-[45%] justify-center items-center">
+    <div  className="absolute  bottom-10  left-[45%] justify-center items-center">
       <button onClick={scrollToElement}>
         <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
           <motion.div
