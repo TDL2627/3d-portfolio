@@ -12,11 +12,18 @@ import {
   ScrollDown
 } from "./components";
 import { meDesktop } from "./assets";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import ThreeDpc from "./components/canvas/Computers";
+import { useEffect } from "react";
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <BrowserRouter>
+    
       <div className="bg-slate-800 relative z-0">
         <div className="bg-slate-800">
           <Navbar />

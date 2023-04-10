@@ -30,6 +30,7 @@ const ThreeDpc = () => {
   };
   const [isMobile, setIsMobile] = useState(false);
   // rotation
+  
   return (
     <div className="basis-1/2 w-full h-full bg-slate-800 pr-10">
       {pointer && <CustomCursor points={position} text="Turn me" />}

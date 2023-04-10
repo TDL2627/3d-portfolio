@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const ScollDown = () => {
     const scrollToElement = () => {
         const element = document.getElementById("About");
@@ -12,7 +13,7 @@ const ScollDown = () => {
     <div className="absolute  bottom-10  left-[45%] justify-center items-center">
       <button onClick={scrollToElement}>
         <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-          <motion.dev
+          <motion.div
             animate={{
               y: [0, 24, 0],
             }}
