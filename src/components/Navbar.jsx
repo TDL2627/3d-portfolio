@@ -10,9 +10,37 @@ const Navbar = () => {
   const scrollToElement = (elementId) => {
     const element = document.getElementById(elementId);
     if (element) {
-      element.scrollIntoView({behavior: 'smooth', block: 'start'});
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  useEffect(() => {
+    const observers = {};
+
+    navLinks.forEach((link) => {
+      observers[link.title] = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            setActive(link.title);
+          }
+        });
+      },
+      { rootMargin: '0px', threshold: 0.5 }
+
+      );
+
+      observers[link.title].observe(document.querySelector(`#${link.title}`));
+    });
+
+    return () => {
+      navLinks.forEach((link) => {
+        observers[link.title].unobserve(
+          document.querySelector(`#${link.title}`)
+        );
+      });
+    };
+  }, []);
+
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 top-0 z-20 bg-blue-700  fixed   `}
@@ -31,25 +59,27 @@ const Navbar = () => {
             Kannemeyer{" "}
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <div className=" hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
-            <li
-              key={link.id}
+            <div
+              key={link.title}
               className={`${
-                active === link.title ? "text-white underline font-bold" : "text-secondary"
+                active === link.title
+                  ? "text-white underline font-bold"
+                  : "text-secondary"
               } font-medium cursor-pointer  hover:text-white hover:underline`}
             >
               <button
                 onClick={() => {
+                  scrollToElement(link.title);
                   setActive(link.title);
-                  scrollToElement(link.id)
                 }}
               >
                 {link.title}
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             onClick={() => {
@@ -76,20 +106,22 @@ const Navbar = () => {
             <ul className="list-none  ">
               {navLinks.map((link) => (
                 <li
-                  key={link.id}
+                  key={link.title}
                   className={`${
-                    active === link.title ? "text-white underline" : "text-secondary"
+                    active === link.title
+                      ? "text-white underline"
+                      : "text-secondary"
                   } font-bold m-10 cursor-pointer font-poppins text-[16px]`}
                 >
-                  <Link
+                  <button
                     onClick={() => {
                       setActive(link.title);
                       setToggle(false);
+                      scrollToElement(link.title);
                     }}
-                    to={`#${link.id}`}
                   >
                     {link.title}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
