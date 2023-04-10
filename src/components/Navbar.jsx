@@ -13,7 +13,17 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive("");
+        }
+      });
+    });
 
+    observer.observe(document.querySelector('#Home'));
+  }, []);
   useEffect(() => {
     const observers = {};
 

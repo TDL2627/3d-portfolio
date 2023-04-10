@@ -20,7 +20,7 @@ const App = () => {
       <div className="bg-slate-800 relative z-0">
         <div className="bg-slate-800">
           <Navbar />
-          <div className="grid h-screen grid-rows-4 relative  ">
+          <div id="Home" className="grid h-screen grid-rows-4 relative  ">
             <Hero />
             <div className="w-full md:flex flex-row row-span-2">
               <div className="w-full basis-1/2 pt-20 relative hidden md:block">
