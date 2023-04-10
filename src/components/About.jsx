@@ -8,11 +8,12 @@ const ServiceCard = ({ title, index, icon }) => {
   return (
     <Tilt className="w-full">
       <motion.div
-        className="w-full xs:w-[250px] green-pink-gradient p-x rounded-md shadow-card"
+        className="w-full  green-pink-gradient p-1 rounded-md shadow-card"
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
       >
-        <div>
-          <p>{title}</p>
+        <div className="bg-tertiary rounded-lg py-5 px-12 min-h-[250px] shadow-card flex justify-evenly items-center flex-col">
+          <p className="md:text-[20px] font-bold ">{title}</p>
+          <img src={icon} alt={title} className="w-16 h-16 object-contain"/>
         </div>
       </motion.div>
     </Tilt>
@@ -20,14 +21,14 @@ const ServiceCard = ({ title, index, icon }) => {
 };
 const About = () => {
   return (
-    <div id="About" className="h-screen pt-20 bg-slate-600 px-20">
+    <div id="About" className="h-max md:pt-20 md:pb-10 bg-slate-600 p-5 md:px-20">
       <h2
         data-aos="fade-up"
         className="md:text-5xl font-black text-center mb-10"
       >
         About
       </h2>
-      <p>
+      <p className="leading-relaxed">
         As a full stack junior developer, I have a passion for creating
         efficient and user-friendly web applications. With a strong foundation
         in both front-end and back-end development, I am able to tackle projects
@@ -40,7 +41,7 @@ const About = () => {
         player, I am always eager to take on new challenges and contribute to
         the success of any project.
       </p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 grid w-full md:grid-cols-2 gap-10">
         {services.map((service, index) => (
           <ServiceCard index={index} key={service.title} {...service} />
         ))}
