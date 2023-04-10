@@ -21,10 +21,10 @@ const ServiceCard = ({ title, index, icon }) => {
 };
 const About = () => {
   return (
-    <div id="About" className="h-max md:pt-20 md:pb-10 bg-slate-600 p-5 md:px-20">
+    <div id="About" className="h-max pt-20  md:pb-10 bg-slate-600 p-5 md:px-20">
       <h2
         data-aos="fade-up"
-        className="md:text-5xl font-black text-center mb-10"
+        className="md:text-5xl text-2xl font-black text-center mb-10"
       >
         About
       </h2>

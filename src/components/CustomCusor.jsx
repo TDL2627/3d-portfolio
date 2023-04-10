@@ -4,7 +4,7 @@ const CustomCursor = (props) => {
   const { points, text } = props;
   return (
     <div
-      className="custom-cursor hidden md:block "
+      className="custom-cursor "
         style={{ left: points.x, top: points.y }}
     >
       <div className="custom-cursor-inner  ">

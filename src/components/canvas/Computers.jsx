@@ -32,7 +32,7 @@ const ThreeDpc = () => {
   // rotation
   
   return (
-    <div data-aos="fade-left" className="md:basis-1/2 hidden md:block md:w-full w-max h-full bg-slate-800 pr-10">
+    <div className="basis-1/2 md:block hidden w-full h-full bg-slate-800 pr-10">
       {pointer && <CustomCursor points={position} text="Turn me" />}
 
       <Canvas
@@ -48,7 +48,7 @@ const ThreeDpc = () => {
         onMouseLeave={() => {
           setPointer(false);
         }}
-        style={{ cursor: `${!isMobile && "none"}`}}
+        style={{ cursor: "none"}}
       >
         <Suspense fallback={<Loader />}>
           <OrbitControls
