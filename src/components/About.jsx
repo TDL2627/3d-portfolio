@@ -3,6 +3,7 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import Bubbles from "./Bubbles";
 
 const ServiceCard = ({ title, index, icon }) => {
   return (
@@ -13,7 +14,7 @@ const ServiceCard = ({ title, index, icon }) => {
       >
         <div className="bg-tertiary rounded-lg py-5 px-12 min-h-[250px] shadow-card flex justify-evenly items-center flex-col">
           <p className="md:text-[20px] font-bold ">{title}</p>
-          <img src={icon} alt={title} className="w-16 h-16 object-contain"/>
+          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
         </div>
       </motion.div>
     </Tilt>
@@ -22,6 +23,7 @@ const ServiceCard = ({ title, index, icon }) => {
 const About = () => {
   return (
     <div id="About" className="h-max pt-20  md:pb-10 bg-slate-600 p-5 md:px-20">
+      <Bubbles />
       <h2
         data-aos="fade-up"
         className="md:text-5xl text-2xl font-black text-center mb-10"
