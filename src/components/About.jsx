@@ -9,6 +9,7 @@ const ServiceCard = ({ title, index, icon }) => {
   return (
     <Tilt className="w-full">
       <motion.div
+       data-aos="flip-right"
         className="w-full  green-pink-gradient p-1 rounded-md shadow-card"
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
       >
