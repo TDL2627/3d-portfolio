@@ -7,7 +7,6 @@ import { experiences } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
 const ExperienceCard = ({ experience }) => {
-
   return (
     <VerticalTimelineElement
       contentStyle={{ background: "#1d1836", color: "#fff" }}
@@ -15,7 +14,10 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div>
+        <div
+          className="flex- justify-center items-center w-f
+         h-full"
+        >
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -26,13 +28,26 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         <h3 className="text-white text-bold ">{experience.title}</h3>
+        <p className="text-secondary text-[16px] semibold">
+          {experience.company_name}
+        </p>
       </div>
+      <ul className="mt-5 list-disc ml-5 space-y-2">
+        {experience.points.map((point, index) => (
+          <li
+            key={`exp-point-${index}`}
+            className="text-white text-[14px] pl-1 tracking-wider"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
     </VerticalTimelineElement>
   );
 };
 const Experience = () => {
   return (
-    <div id="Experience" className="h-screen pt-20 bg-slate-800 ">
+    <div id="Experience" className="h-max pt-20 bg-slate-800 ">
       <h2
         data-aos="fade-up"
         className="md:text-5xl font-black text-center uppercase"
