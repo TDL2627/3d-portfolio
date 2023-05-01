@@ -125,11 +125,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Eccomerce Developer",
-    company_name: "Starbucks",
+    title: "CodeSpace Student",
+    company_name: "Code Space",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "March 2020 - August 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -138,8 +138,8 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Junior Software Developer",
+    company_name: "Ayoba, The Digital Academy",
     icon: tesla,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
@@ -151,8 +151,8 @@ const experiences = [
     ],
   },
   {
-    title: "Programmer",
-    company_name: "Shopify",
+    title: "Intern",
+    company_name: "Life Choices",
     icon: shopify,
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
@@ -164,7 +164,7 @@ const experiences = [
     ],
   },
   {
-    title: "Full stack Developer",
+    title: " Junior Full stack Developer",
     company_name: "Meta",
     icon: meta,
     iconBg: "#E6DEDD",
