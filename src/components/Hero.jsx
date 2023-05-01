@@ -4,7 +4,7 @@ import { styles } from "../style";
 const Hero = () => {
   return (
     <>
-      <section className="relative w-full h-full row-span-2 mx-auto mt-16 bg-slate-800 ">
+      <section className="relative w-full h-full row-span-2 mx-auto mt-16 bg-slate-800  ">
         <div
          data-aos="fade-down"
           className={` ${styles.paddingX}  absolute inset-0 md:top-[100px] top-[20px] max-w-7xl mx-auto flex flex-row items-start gap-5`}

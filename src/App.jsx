@@ -9,13 +9,14 @@ import {
   Skills,
   Projects,
   StarsCanvas,
-  ScrollDown
+  ScrollDown,
 } from "./components";
 import { meDesktop } from "./assets";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import ThreeDpc from "./components/canvas/Computers";
 import { useEffect } from "react";
+import Bubbles from "./components/Bubbles";
 const App = () => {
   useEffect(() => {
     AOS.init();
@@ -24,13 +25,17 @@ const App = () => {
   return (
     <BrowserRouter>
     
-      <div className="bg-slate-800 relative z-0">
-        <div className="bg-slate-800">
+      <div className="bg-slate-800 relative z-0 overflow-x-hidden">
+      <Bubbles />
+        <div className="bg-slate-800 z-10">
           <Navbar />
           <div id="Home" className="grid h-screen grid-rows-4 relative  ">
             <Hero />
-            <div className="w-full md:flex flex-row row-span-2">
-              <div data-aos="fade-right" className="w-full basis-1/2 pt-20 relative hidden md:block">
+            <div className="w-full md:flex flex-row row-span-2 ">
+              <div
+                data-aos="fade-right"
+                className="w-full basis-1/2 pt-20 relative hidden md:block"
+              >
                 <img
                   className="absolute bottom-0 left-0 -ml-5 "
                   src={meDesktop}
@@ -40,7 +45,7 @@ const App = () => {
               <ThreeDpc />
             </div>
             {/* scroll down button */}
-           <ScrollDown/>
+            <ScrollDown />
           </div>
           <About />
           <Skills />

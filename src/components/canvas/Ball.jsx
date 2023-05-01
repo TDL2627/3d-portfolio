@@ -7,10 +7,16 @@ import {
   Preload,
   useTexture,
 } from "@react-three/drei";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
 
 const Ball = ({ imgUrl }) => {
-  console.log(imgUrl, "aye props");
+  // const [colorMap] = useTexture([imgUrl]);
+  // const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useTexture([
+  //   'PavingStones092_1K_Color.jpg',
+  //   'PavingStones092_1K_Displacement.jpg',
+  //   'PavingStones092_1K_Normal.jpg',
+  //   'PavingStones092_1K_Roughness.jpg',
+  //   'PavingStones092_1K_AmbientOcclusion.jpg',
+  // ])
   // const decal = useTexture(imgUrl)
   // const [decal] = useTexture([imgUrl]);
   // const colorMap = useLoader(TextureLoader, imgUrl)
@@ -38,23 +44,24 @@ const Ball = ({ imgUrl }) => {
 };
 
 const BallCanvas = ({ icon }) => (
-  <Canvas
-    frameloop="demand"
-    shadows
-    gl={{ preserveDrawingBuffer: true }}
-    onError={(error) => console.error("aye", error)}
-  >
-    <Suspense
-      fallback={
-        <div>
-          <p>Loading</p>
-        </div>
-      }
-    >
-      <OrbitControls autoRotate enableZoom={false} />
-      <Ball imgUrl={icon} />
-    </Suspense>
-    <Preload all />
-  </Canvas>
+  // <Canvas
+  //   frameloop="demand"
+  //   shadows
+  //   gl={{ preserveDrawingBuffer: true }}
+  //   onError={(error) => console.error("aye", error)}
+  // >
+  //   <Suspense
+  //     fallback={
+  //       <div>
+  //         <p>Loading</p>
+  //       </div>
+  //     }
+  //   >
+  //     <OrbitControls autoRotate enableZoom={false} />
+  //     <Ball imgUrl={icon} />
+  //   </Suspense>
+  //   <Preload all />
+  // </Canvas>
+  <img src={icon} alt="" />
 );
 export default BallCanvas;

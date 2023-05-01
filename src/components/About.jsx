@@ -3,7 +3,6 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import Bubbles from "./Bubbles";
 
 const ServiceCard = ({ title, index, icon }) => {
   return (
@@ -23,8 +22,7 @@ const ServiceCard = ({ title, index, icon }) => {
 };
 const About = () => {
   return (
-    <div id="About" className="h-max pt-20  md:pb-10 bg-slate-600 p-5 md:px-20">
-      <Bubbles />
+    <div id="About" className="h-max pt-20  md:pb-10 bg-slate-600 p-5 md:px-20 ">
       <h2
         data-aos="fade-up"
         className="md:text-5xl text-2xl font-black text-center mb-10"
