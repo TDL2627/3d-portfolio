@@ -47,7 +47,7 @@ const ExperienceCard = ({ experience }) => {
 };
 const Experience = () => {
   return (
-    <div id="Experience" className="h-max pt-20 bg-slate-800 ">
+    <div id="Experience" className="h-screen overflow-y-scroll pt-20 bg-slate-800 ">
       <h2
         data-aos="fade-up"
         className="md:text-5xl font-black text-center uppercase"
