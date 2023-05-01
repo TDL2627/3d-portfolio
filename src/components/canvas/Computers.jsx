@@ -30,7 +30,7 @@ const ThreeDpc = () => {
   };
   const [isMobile, setIsMobile] = useState(false);
   // rotation
-  
+
   return (
     <div className="basis-1/2 md:block hidden w-full h-full bg-slate-800 pr-10">
       {pointer && <CustomCursor points={position} text="Turn me" />}
@@ -48,9 +48,15 @@ const ThreeDpc = () => {
         onMouseLeave={() => {
           setPointer(false);
         }}
-        style={{ cursor: "none"}}
+        style={{ cursor: "none" }}
       >
-        <Suspense fallback={<Loader />}>
+        <Suspense
+          fallback={
+            <div>
+              <p>Loading</p>
+            </div>
+          }
+        >
           <OrbitControls
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
